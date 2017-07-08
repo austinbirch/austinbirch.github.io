@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div>
+  {{ content }}
+
+  <div>
+    {% for post in site.posts %}
+    <div>
+      {% include post_content.html url=post.url title=post.title content=post.content %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
