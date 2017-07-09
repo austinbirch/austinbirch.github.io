@@ -4,7 +4,9 @@
 }
 
 html {
-  font-family: 'ff-meta-serif-web-pro', serif;
+  font-family: "mr-eaves-xl-modern", "Avenir Next", "Helvetica", sans-serif;
+  font-size: 106.25%;
+  color: #000;
 }
 
 /* tachyons has no justify */
@@ -48,34 +50,56 @@ pre {
 ul {
   padding-left: 2rem;
   list-style-type: disc;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.6rem;
 }
 
 p, li {
-  font-weight: 400;
-  margin-bottom: 1.2rem;
-  color: #222;
+  font-weight: 300;
+  line-height: 1.2;
 }
 
 h1, h2, h3 {
   line-height: 1rem;
   margin-bottom: 1.2rem;
+  font-weight: 700;
 }
 
 a {
-  color: blue;
+  color: #304FFE;
 }
 a:hover {
   cursor: pointer;
-  color: #E7040F;
+  color: #F50057;
 }
 
 .article-body h1,
-.article-body h2,
+.article-body h2 {
+  margin-bottom: 1rem;
+  margin-top: 2.4rem;
+}
 .article-body h3,
 .article-body h4 {
-  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  margin-top: 1.2rem;
 }
 
 article .post-title {
   color: #222222;
+}
+
+.self-link {
+  color: #F50057;
+}
+.self-link:hover {
+  color: #F50057;
+  text-decoration: underline;
 }
