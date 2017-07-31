@@ -5,13 +5,18 @@
 
 html {
   font-family: "mr-eaves-xl-modern", "Avenir Next", "Helvetica", sans-serif;
+  font-family: "mrs-eaves-xl-serif", monospace;
+  /* font-family: "mrs-eaves", monospace; */
   font-size: 106.25%;
+  /* font-size:  112.5%; */
   color: #000;
 }
 
 /* tachyons has no justify */
-.tj {
-  text-align: justify;
+@media screen and (min-width: 30em) {
+  .tj-ns {
+    text-align: justify;
+  }
 }
 
 .hyphenate {
@@ -30,17 +35,27 @@ h3, .f3 { font-size: 1rem; }
 h4, .f4 { font-size: 0.875rem; }
 p { font-size: 1rem; }
 
+h1, h2, h3, h4, h5 {
+  font-family: "mrs-eaves-xl-serif", monospace;
+  font-family: "mr-eaves-xl-modern", "Avenir Next", "Helvetica", sans-serif;
+}
+
+strong {
+  font-weight: 700;
+}
+
 code {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
+  background-color: #ededed;
   padding: 0.1rem 0.3rem;
-  vertical-align: bottom;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .island {
   background-color: #f5f5f5;
   margin: 1.2rem 0;
   padding: 1rem;
+  overflow-x: scroll;
 }
 
 pre {
@@ -48,13 +63,22 @@ pre {
 }
 
 ul {
-  padding-left: 2rem;
+  padding-left: 1rem;
+  padding-right: 0;
   list-style-type: disc;
   margin-bottom: 1.2rem;
 }
+@media screen and (min-width: 30em) {
+  ul {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: left;
+  }
+}
+
 
 p {
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 1.2rem;
 }
 
@@ -81,15 +105,24 @@ a:hover {
   color: #F50057;
 }
 
+.article-title {
+  line-height: 1.4rem;
+}
+
 .article-body h1,
-.article-body h2 {
+.article-body h2,
+.article-body h3 {
+  text-align: left;
   margin-bottom: 1rem;
   margin-top: 2.4rem;
 }
-.article-body h3,
 .article-body h4 {
+  text-align: left;
   margin-bottom: 1rem;
   margin-top: 1.2rem;
+}
+.article-body h3 {
+  font-size: 1.05rem;
 }
 
 article .post-title {
@@ -98,8 +131,17 @@ article .post-title {
 
 .self-link {
   color: #F50057;
+  font-weight: 700;
+  font-family: "mr-eaves-xl-modern", "Avenir Next", "Helvetica", sans-serif;
 }
 .self-link:hover {
   color: #F50057;
   text-decoration: underline;
+}
+
+pre.highlight {
+  background-color: #ededed;
+  margin-bottom: 1.2rem;
+  padding: 1rem 0.5rem;
+  overflow-x: scroll;
 }

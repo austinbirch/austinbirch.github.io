@@ -1,10 +1,10 @@
 <article class="mb5">
   <header class="mb4">
-    <a class="" href="{{ include.url }}">
-      <h2>{{ include.title | escape }}</h2>
+    <a class="article-title-link" href="{{ include.url }}">
+      <h2 class="article-title">{{ include.title | escape }}</h2>
     </a>
   </header>
-  <div class="article-body tj hyphenate">
+  <div class="article-body tj-ns hyphenate">
     {{ include.content }}
   </div>
 </article>
