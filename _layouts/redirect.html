@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" href="{{ "/assets/ab.css" | relative_url }}">
+  <script src="https://use.typekit.net/trc8tjc.js"></script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+  <meta charset="utf-8">
+  <title>Redirecting&hellip;</title>
+  <link rel="canonical" href="{{ page.redirect.to }}">
+  <meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
+  <meta name="robots" content="noindex">
+  <div class="pv5 measure-wide center">
+    <h1 class="fw6 f5">Redirecting&hellip;</h1>
+    <a href="{{ page.redirect.to }}">Click here if you are not redirected.</a>
+  </div>
+  <script>location="{{ page.redirect.to }}"</script>
+</html>
