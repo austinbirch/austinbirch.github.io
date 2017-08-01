@@ -1,6 +1,8 @@
 ---
 layout: post
 title: A Hackers Expense Tracking (wip)
+permalink: "/hackers-expense-tracking.html"
+redirect_from: "/2015/06/07/a-hackers-expense-tracking-wip.html"
 ---
 
 A quick and hacky way of tracking expenses.
