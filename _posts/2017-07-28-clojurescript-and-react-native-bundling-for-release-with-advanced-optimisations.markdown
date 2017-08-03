@@ -29,7 +29,7 @@ The first thing we need to do is create a custom transformer we can supply to me
 
 ### Hacks to prevent metro-bundler from applying minification etc
 
-The second thing we need to do is skip the constant folding and minification transforms that metro-bundler applies in addition to the transform step above, but _only for our ClojureScript output_. I’ve not spent enough time with the metro-bundler to figure out what a sensible pull request would be (i.e. one that’s applicable to other users too), so instead, our terrible hack:
+The second thing we need to do is skip the constant folding and minification transforms that metro-bundler applies in addition to the transform step above, but _only for our ClojureScript output_. I’ve not spent enough time with the metro-bundler to figure out what a sensible pull request would be (i.e. one that’s applicable to other users too), so instead, our terrible hack[^actual-patch]:
 
 <script src="https://gist.github.com/austinbirch/ada5cf24f41653babca8ac40614a1951.js"></script>
 
@@ -55,6 +55,12 @@ Where `{line-number}` & `{column-number}` come from a stack trace for the corres
 	Depending on how this issue gets resolved, we might be able to drop our custom transformer. Ideally we’d like the ability to let metro-bundler know not to apply any transformations/minification to our single-file ClojureScript output, and to accept an existing source map for that file too.
 - In theory you can use a `.babelrc` file to ignore files. Unfortunately I’ve not been able to get this to work yet (still getting the out-of-memory/timeout issues). As far as I can tell, we’d still need to use a custom transformer to prevent the loss of our source mapping information, even if we could skip the transformations.
 
+<span></span>
+- footnotes
+{:footnotes}
+
+[^actual-patch]: The lines we actually want to patch are [here][11] and [here][12], but as metro-bundler has a post-install compilation step we need to target the compiled output instead.
+
 [1]:	https://github.com/facebook/metro-bundler "metro-bundler"
 [2]:	https://clojurescript.org/reference/compiler-options#optimizations
 [3]:	https://github.com/mjmeintjes/boot-react-native
@@ -65,3 +71,5 @@ Where `{line-number}` & `{column-number}` come from a stack trace for the corres
 [8]:	https://github.com/mjmeintjes/boot-react-native
 [9]:	https://github.com/mjmeintjes/boot-react-native/issues/23
 [10]:	https://github.com/facebook/metro-bundler/issues/10
+[11]:   https://github.com/facebook/metro-bundler/blob/acd57f780b2f8c99895c2c35efd08b7b31fea9cf/packages/metro-bundler/src/JSTransformer/worker/index.js#L126
+[12]:   https://github.com/facebook/metro-bundler/blob/acd57f780b2f8c99895c2c35efd08b7b31fea9cf/packages/metro-bundler/src/JSTransformer/worker/minify.js#L20

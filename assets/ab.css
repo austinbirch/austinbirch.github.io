@@ -145,3 +145,20 @@ pre.highlight {
   padding: 1rem 0.5rem;
   overflow-x: scroll;
 }
+
+.footnotes {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+}
+.footnotes ol {
+  margin-left: 1rem;
+}
+.footnotes li {
+  padding-left: 0.5rem;
+}
+.footnotes p {
+  text-align: left;
+  font-size: 0.9rem;
+}
